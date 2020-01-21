@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style> 
+	p, label, input {
+		color: red;
+	}
+</style>
+
+{% for post in post_list %}
+	<p>{{post.post_text}}</p>
+{% endfor %}
+<form method="post" action="./">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="отправить"><br>
+</form>
